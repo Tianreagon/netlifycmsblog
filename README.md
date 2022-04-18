@@ -1,8 +1,8 @@
-This is a [Hugo](https://gohugo.io/) project.
+### This is a [Hugo](https://gohugo.io/) project.
 
 ## Getting Started
 
-# Run
+### Run
 
 First, run the development server:
 
@@ -17,7 +17,7 @@ Open [http://localhost:1313](http://localhost:3000) with your browser to see the
 
 You won't actually see anything, just yet, and that's because you don't have any template files. That's easily resolved. In the layouts/ directory, create a file index.html and put a basic HTML structure in there:
 
-```bash
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,11 +42,11 @@ This is as basic as you can get with a Hugo project. There's just enough here no
 
 ## Getting Started With Netlify CMS
 
-# Add the Netlify CMS files to Hugo
+### Add the Netlify CMS files to Hugo
 
 In Hugo, static files that don't need to be processed by the build commands live in the `bash static/ ` directory. You'll install the Netlify CMS admin and config files there. Create a directory `bash admin/ ` and within it, create two files `bash index.html ` and `bash config.yml`. In the `bash index.html`, add the following content:
 
-```bash
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -66,25 +66,25 @@ In Hugo, static files that don't need to be processed by the build commands live
 In the config.yml file, you can add this basic configuration — you can customize as you see fit, this sample file is just to get you started.
 You can start editing the page by modifying `layouts/index.js`. The page auto-updates as you edit the file.
 
-```bash
+```yaml
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 media_folder: static/img
 public_folder: /img
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
 ```
 
 Note: You won't be able to access the CMS just yet — you still need to deploy the project with Netlify and authenticate with Netlify Identity. You'll handle this in the next few steps of this guide.
